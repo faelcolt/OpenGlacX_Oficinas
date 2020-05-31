@@ -1,5 +1,7 @@
 # OpenGlacX_Oficinas
 
+https://www.facebook.com/rafaeldeleonserafim/videos/2618699305074689/
+
 Open Source Version of GlacX Workshops
 
 Desktop system developed in python, tkinter and other libraries, aimed at managing small mechanical workshops,
