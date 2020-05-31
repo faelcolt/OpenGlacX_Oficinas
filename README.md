@@ -1,6 +1,6 @@
 # OpenGlacX_Oficinas
 
-https://www.facebook.com/rafaeldeleonserafim/videos/2618699305074689/
+https://youtu.be/USmZ4d-axDQ
 
 Open Source Version of GlacX Workshops
 
