@@ -1,14 +1,14 @@
-####  Carrega todos modulos necessarios a execucao do programa
+####  Loads all modules needed to run the program
 from modulos import *;from functions import *;import licence;from otherswindows import *;from multilanguage import *
 from clientes import *;from automoveis import *;from servicos import *;from estoque import *;from produtos import *
 from tecnicos import *;from fornecedores import *;from marcaProdutos import *;from empresa import *;from financeiro import *
 from atualizaMaodeObra import *;from pagamentoOrc import *;from printRelatorios import *
 
-### cria variavel que da nome a janela principal
+### create variable that gives the name of the main window
 janela = Tk()
 
 ##############################################################################################################
-#### Criando variavel de consulta dos produtos e serviços para o autocomplete
+#### Creating query variable of products and services for autocomplete
 conn = sqlite3.connect("glac.db")
 cursor = conn.cursor()
 lista2 = cursor
@@ -97,7 +97,7 @@ class MeuOrc(Validadores, Functions, Formulas, Multilanguage, OthersWindows, Cli
         self.cores();
         self.images_base64()
         ###########################################################################
-        ### Variaveis dos Widgets desenhados
+        ### Variables of the drawn widgets base 64
         self.orcamentoLb = PhotoImage(data=base64.b64decode(self.ORCAMENTOLB))
         self.add = PhotoImage(data=base64.b64decode(self.ADD))
         self.seulogo = PhotoImage(data=base64.b64decode(self.SEULOGO))
@@ -113,12 +113,12 @@ class MeuOrc(Validadores, Functions, Formulas, Multilanguage, OthersWindows, Cli
         self.tecnicoBt = PhotoImage(data=base64.b64decode(self.BTTECNICO))
         self.lupaBt = PhotoImage(data=base64.b64decode(self.BTLUPA))
         
-        ### Abrindo tela principal
+        ### Opening main screen
         self.TelaOrc()
     def TelaOrc(self):
-        ### Criação da janela
+        ### Window creation
         def abreJanela():
-            ### Montagem da janela
+            ### Window assembly
             self.janela = janela
             self.janela.title(self.m_Orcamento + self.m_e + self.m_Ordem + self.m_Glac)
             self.janela.configure(background=self.fg_label);
@@ -132,7 +132,7 @@ class MeuOrc(Validadores, Functions, Formulas, Multilanguage, OthersWindows, Cli
         abreJanela()
         
         def validaEntradas():
-            ### Nomeando validadores das entradas
+            ### Naming input validators
             self.vcmd8 = (self.janela.register(self.validate_entry8), "%P")
             self.vcmd6 = (self.janela.register(self.validate_entry6), "%P")
             self.vcmd4 = (self.janela.register(self.validate_entry4), "%P")
