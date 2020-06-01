@@ -406,8 +406,8 @@ class MeuOrc(Validadores, Functions, Formulas, Multilanguage, OthersWindows, Cli
         self.listMunicipio.place(relx=0.57,rely=0.54,relwidth=0.27,relheight= 0.15)
         ###############################################
         # Label UF
-        self.descrUf=Label(self.FrameCliente,text=self.m_Uf,fg=self.fg_label,font=('Verdana', '8', 'bold'),
-            bg = self.fundo_do_frame); self.descrUf.place(relx=0.85, rely=0.54, relwidth = 0.05, relheight= 0.15)
+        self.descrUf=Label(self.FrameCliente,text=self.m_Uf,fg=self.fg_label,font=('Verdana', '6', 'bold'),
+            bg = self.fundo_do_frame); self.descrUf.place(relx=0.85, rely=0.54, relwidth = 0.06, relheight= 0.15)
         ###############################################
         # Entrada UF
         self.listUf=Entry(self.FrameCliente,width=3,bd=1,fg=self.fg_entry,font=('Verdana','8','bold', 'italic'),
@@ -473,8 +473,8 @@ class MeuOrc(Validadores, Functions, Formulas, Multilanguage, OthersWindows, Cli
         self.listAut.place(relx=0.15, rely=0.20, relwidth=0.6, relheight=0.17)
         ###  Label e Entrada Marca
         self.descrMarca = Label(self.FrameAut, text=self.m_Marca + self.m_Pontinhos, width=9, fg=self.fg_label,
-                                bg=self.fundo_do_frame, font=('Verdana', '8', 'bold'))
-        self.descrMarca.place(relx=0, rely=0.4, relwidth=0.2, relheight=0.17)
+                                bg=self.fundo_do_frame, font=('Verdana', '7', 'bold'))
+        self.descrMarca.place(relx=0, rely=0.4, relwidth=0.23, relheight=0.17)
         self.listMarca = Entry(self.FrameAut, width=22, bd=1, fg=self.fg_entry, bg=self.bg_entry,
                                font=('Verdana', '8', 'bold'));
         self.listMarca.place(relx=0.15, rely=0.4, relwidth=0.6, relheight=0.17)
@@ -489,8 +489,8 @@ class MeuOrc(Validadores, Functions, Formulas, Multilanguage, OthersWindows, Cli
         #########################################################
         ###  Label e Entrada km
         self.descrObs = Label(self.FrameAut, text=self.m_Km + self.m_Pontinhos);
-        self.descrObs.configure(fg=self.fg_label, bg=self.fundo_do_frame, font=('Comic', '10', 'bold'))
-        self.descrObs.place(relx=0, rely=0.8, relwidth=0.15, relheight=0.17)
+        self.descrObs.configure(fg=self.fg_label, bg=self.fundo_do_frame, font=('Comic', '8', 'bold'))
+        self.descrObs.place(relx=0, rely=0.8, relwidth=0.17, relheight=0.17)
         self.entradaObs = Entry(self.FrameAut, validate="key", validatecommand=self.vcmd9float)
         self.entradaObs.configure(fg='darkred', bg='lightblue', font=('Verdana', '8', 'bold'))
         self.entradaObs.place(relx=0.15, rely=0.8, relwidth=0.2, relheight=0.17)
@@ -509,7 +509,7 @@ class MeuOrc(Validadores, Functions, Formulas, Multilanguage, OthersWindows, Cli
         self.ClientBot = Button(self.FrameBot, image=self.cadcliBt, bd=0, bg= '#49708D', command=self.cadcli)
         self.ClientBot.place(relx=0.03, rely=0, relwidth=0.14, relheight=0.8)
         self.ClientLbBt = Label(self.FrameBot, text=self.m_Clientes, bd=2, bg = '#49708D', fg= 'white',
-                                font=('Verdana', '8', 'bold'))
+                                font=('Verdana', '7', 'bold'))
         self.ClientLbBt.place(relx=0.03, rely=0.82, relwidth=0.14, relheight=0.18)
 
         self.FornecBot = Button(self.FrameBot, image=self.cadfornecBt, bd=0, bg= '#49708D', command=self.cadforn)
@@ -545,7 +545,7 @@ class MeuOrc(Validadores, Functions, Formulas, Multilanguage, OthersWindows, Cli
         self.frameProb = Frame(self.frame_aba1, bg= self.fundo_do_frame, bd=4, relief=SUNKEN)
         self.frameProb.place(relx=0.01, rely=0.01, relwidth=1, relheight=1)
         self.DescrProb=Label(self.frame_aba1,bg=self.bg_button,text=self.m_Atend1,bd=0,fg=self.fg_button,
-            font=('Verdana', '12', 'bold'));
+            font=('Verdana', '10', 'bold'));
         self.DescrProb.place(relx=0.04, rely=0.04, relwidth=0.91, relheight=0.12)
         self.area1=Entry(self.frame_aba1,bd=1,width=77,fg=self.fg_entry,bg=self.bg_entry,font=('Verdana','11','bold'))
         self.area1.place(relx=0.05, rely=0.2, relwidth=0.9, relheight=0.1)
