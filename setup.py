@@ -199,8 +199,8 @@ class MeuOrc(Validadores, Functions, Formulas, Multilanguage, OthersWindows, Cli
         ###  Logotipo GlacX - Tela Superior
         self.logo = Label(self.top, image=self.logo_rf, bd=0, bg='#49708D', relief=SUNKEN)
         self.logo.place(relx=0.9, rely=0, relwidth=0.1, relheight=1)
-        self.textoLogo = Label(self.top, bg='#49708D', text=self.m_logorf, bd=0, fg=self.bg_label, font=('Comic', '36', 'bold'))
-        self.textoLogo.place(relx=0.4, rely=0.2, relwidth=0.2, relheight=0.6)
+        self.textoLogo = Label(self.top, bg='#49708D', text=self.m_logorf, bd=0, fg=self.bg_label, font=('Comic', '24', 'bold'))
+        self.textoLogo.place(relx=0.4, rely=0.2, relwidth=0.3, relheight=0.6)
         
         ##########################################################################################################
         ### Container dos dados do cliente
