@@ -228,15 +228,15 @@ class MeuOrc(Validadores, Functions, Formulas, Multilanguage, OthersWindows, Cli
         #### Botões Orçamento
         ###  Botao Gravar
         self.botaoAbreOrc = Button(self.FrameTec, text=self.m_Gravar, bd=0, bg=self.bg_button_del, fg=self.fg_button,
-                                   font=('Aharoni','14', 'bold'), command=self.abre_orc)
+                                   font=('Aharoni','12', 'bold'), command=self.abre_orc)
         self.botaoAbreOrc.place(relx=0.4, rely=0.24, relwidth=0.07, relheight=0.5)
         ###  Botao Buscar
         self.botaoCarregaOrc = Button(self.FrameTec, text=self.m_Buscar, bd=0, bg=self.bg_button, fg=self.fg_button,
-                                      font=('Aharoni','14', 'bold'), command=self.busca_orc)
+                                      font=('Aharoni','12', 'bold'), command=self.busca_orc)
         self.botaoCarregaOrc.place(relx=0.48, rely=0.24, relwidth=0.07, relheight=0.5)
         ### Botao Alterar
         self.botaoAlteraOrc = Button(self.FrameTec, text=self.m_Alterar, bd=0, bg=self.bg_button, fg=self.fg_button,
-                                     font=('Aharoni','14', 'bold'), command=self.altera_orc)
+                                     font=('Aharoni','12', 'bold'), command=self.altera_orc)
         self.botaoAlteraOrc.place(relx=0.56, rely=0.24, relwidth=0.07, relheight=0.5)
         
         ############################################################################################################################
@@ -281,10 +281,9 @@ class MeuOrc(Validadores, Functions, Formulas, Multilanguage, OthersWindows, Cli
         
         def funcpag():
             if self.listaNumOrc.get() == "":
-                msg = "É necessário que um Orçamento ou Ordem de Serviço \n" \
-                      "esteja devidamente carregada na tela!!!"
-                msg += ""
-                messagebox.showinfo("GLAC - Pagamentos", msg)
+                msg = "É necessário que um Orçamento ou Ordem de Serviço esteja devidamente carregada na tela!!! \n"
+                msg += "It is necessary that a Budget or Service Order is properly loaded on the screen"
+                messagebox.showinfo("GLAC", msg)
             else:
                 self.pagaOrdem()
 
@@ -334,21 +333,21 @@ class MeuOrc(Validadores, Functions, Formulas, Multilanguage, OthersWindows, Cli
     def contCliente(self):
         ####                Container de cadastro do cliente
         # Label do codigo do cliente
-        self.descrCod_cli=Label(self.FrameCliente,text=self.m_Codigo+self.m_Pontinhos,font=('Verdana', '8', 'bold'))
+        self.descrCod_cli=Label(self.FrameCliente,text=self.m_Codigo+self.m_Pontinhos,font=('Verdana', '9', 'bold'))
         self.descrCod_cli.configure(fg=self.fg_label,bg=self.fundo_do_frame)
         self.descrCod_cli.place(relx=0.01, rely=0.04, relheight= 0.17)
         # Entrada do Codigo do Cliente
         self.entradaCod_cli=Entry(self.FrameCliente)
         self.entradaCod_cli.configure(validate="key",validatecommand=self.vcmd6)
-        self.entradaCod_cli.configure(bd=1, width=6, fg=self.fg_entry, bg=self.bg_entry, font=('Verdana', '8', 'bold'))
+        self.entradaCod_cli.configure(bd=1, width=6, fg=self.fg_entry, bg=self.bg_entry, font=('Verdana', '9', 'bold'))
         self.entradaCod_cli.place(relx=0.2, rely=0.04, relwidth = 0.13, relheight= 0.17)
         # Botão Carrega
         self.botaoAdd = Button(self.FrameCliente, text = self.m_Buscar, bd=0, bg=self.bg_button, fg=self.fg_button,
-            font=('Aharoni','14','bold'),command=self.busca_cliente)
+            font=('Aharoni','12','bold'),command=self.busca_cliente)
         self.botaoAdd.place(relx=0.34, rely=0.01, relwidth = 0.17, relheight= 0.23)
         # Botão Limpa
         self.botaoLimp = Button(self.FrameCliente, text = self.m_Limpar, bd=0,  bg=self.bg_button, fg=self.fg_button,
-            font=('Aharoni','14', 'bold'), command=self.limpa_cliente)
+            font=('Aharoni','12', 'bold'), command=self.limpa_cliente)
         self.botaoLimp.place(relx=0.52, rely=0.01, relwidth = 0.17, relheight= 0.23)
         ### Variavel do dia de hoje
         hj = date.today()
