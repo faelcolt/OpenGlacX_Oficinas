@@ -385,7 +385,7 @@ class Multilanguage:
             self.m_Aba4 = 'Hoja de encuesta'
             self.m_Aba5 = 'Fallas'
         elif glacver == 'Oficinaeng':
-            self.m_lista = 'Lista'
+            self.m_lista = 'List'
             self.m_msgCertezaDel = 'Tem certeza que deseja deletar este registro? \n''Esta ação nao podera ser alterada!!!'
             self.m_msgAutDel = "Modelo de automovel excluido com sucesso"
             self.m_msgAutAlt = "Modelo de automovel alterado com sucesso"
