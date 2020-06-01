@@ -16,6 +16,8 @@ Modules:
 tkinter, datetime
 reportlab 3.4.0, math, sys, webbrowser, shutil, pycep_mail, sqlite3, base64, babel, tkcalendar
 
+The setup.py file starts the system and the multilanguage file makes it possible to set the default language
+ of the system.
 ####################### 
 
 Versão Open Source do GlacX Oficinas
@@ -32,4 +34,5 @@ Modulos:
 tkinter, datetime
 reportlab 3.4.0, math, sys, webbrowser, shutil, pycep_correios, sqlite3, base64, babel, tkcalendar
 
- 
+ O arquivo setup.py inicia o sistema e o arquivo multilanguage possibilita setar a linguagem padrao 
+ do sistema.
