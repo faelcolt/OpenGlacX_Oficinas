@@ -552,7 +552,7 @@ class Multilanguage:
             self.m_Receitas = 'Recipes'
             self.m_Horas = 'Hours...'
             self.m_SeuLogo = 'Your Logo here'
-            self.m_DadosDoCliente = 'Client's data'
+            self.m_DadosDoCliente = 'Clients data'
             self.m_DadosDoVeiculo = 'Vehicle Data'
             self.m_Descricao_dos_Problemas = 'Problem Description'
             self.m_ProdutosEServicos = 'Products and services'
