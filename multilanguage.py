@@ -4,9 +4,9 @@
 class Multilanguage:
     def multiGlacx(self):
         # select your language
-        #glacver = 'Oficinapt' ## Portuguese
+        glacver = 'Oficinapt' ## Portuguese
         #glacver = 'Oficinaesp' ## Spanish
-        glacver = 'Oficinaeng'  ## English
+        #glacver = 'Oficinaeng'  ## English
 
 
         if glacver == 'Oficinapt':
