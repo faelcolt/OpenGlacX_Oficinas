@@ -3,90 +3,8 @@ from modulos import *;from functions import *;import licence;from otherswindows 
 from clientes import *;from automoveis import *;from servicos import *;from estoque import *;from produtos import *
 from tecnicos import *;from fornecedores import *;from marcaProdutos import *;from empresa import *;from financeiro import *
 from atualizaMaodeObra import *;from pagamentoOrc import *;from printRelatorios import *
-
 ### create variable that gives the name of the main window
 janela = Tk()
-
-##############################################################################################################
-#### Creating query variable of products and services for autocomplete
-conn = sqlite3.connect("glac.db")
-cursor = conn.cursor()
-lista2 = cursor
-lista2.execute("""SELECT cod_sp, '*****', LOWER(servprod), ' - ', tiposerv, ' - ' , LOWER(id_marcaprod) 
-    FROM servprod """)
-lista3 = cursor.fetchall()
-zlist = []
-for tup in lista3:
-    t = str(tup).replace("('","").replace("',)","").replace(")","").replace("'","").replace(",","").replace("(","")
-    zlist.append(t)
-cursor.close()
-
-##################################################################################################################
-
-class AutocompleteEntrySP(Entry):
-    def __init__(self, lista2, *args, **kwargs):
-        Entry.__init__(self, *args, **kwargs)
-        self.lista = zlist
-        self.var = self["textvariable"]
-        if self.var == '':
-            self.var = self["textvariable"] = StringVar()
-        self.var.trace('w', self.changed)
-        self.bind("<Right>", self.selection); self.bind("<Up>", self.up)
-        self.bind("<Down>", self.down)
-
-        self.lb_up = False
-    def changed(self, name, index, mode):
-        if self.var.get() == '':
-            self.lb.destroy()
-            self.lb_up = False
-        else:
-            words = self.comparison()
-            if words:
-                if not self.lb_up:
-                    self.lb = Listbox(width = 70, height = 15)
-                    self.lb.bind("<Double-Button-1>", self.selection)
-                    self.lb.bind("<Right>", self.selection)
-                    self.lb.place(x=self.winfo_x(), y=self.winfo_y() + self.winfo_height())
-                    self.lb_up = True
-                self.lb.delete(0, END)
-                for w in words:
-                    self.lb.insert(END, w)
-
-            else:
-                if self.lb_up:
-                    self.lb.destroy()
-                    self.lb_up = False
-    def selection(self, event):
-        if self.lb_up:
-            self.var.set(self.lb.get(ACTIVE))
-            self.lb.destroy()
-            self.lb_up = False
-            self.icursor(END)
-    def up(self, event):
-        if self.lb_up:
-            if self.lb.curselection() == ():
-                index = '0'
-            else:
-                index = self.lb.curselection()[0]
-            if index != '0':
-                self.lb.selection_clear(first=index)
-                index = str(int(index) - 1)
-                self.lb.selection_set(first=index)
-                self.lb.activate(index)
-    def down(self, event):
-        if self.lb_up:
-            if self.lb.curselection() == ():
-                index = '0'
-            else:
-                index = self.lb.curselection()[0]
-            if index != END:
-                self.lb.selection_clear(first=index)
-                index = str(int(index) + 1)
-                self.lb.selection_set(first=index)
-                self.lb.activate(index)
-    def comparison(self):
-        pattern = re.compile('.*' + self.var.get() + '.*')
-        return [w for w in self.lista if re.match(pattern, w)]
 
 ### Classe principal que chama todas as outras
 class MeuOrc(Validadores, Functions, Formulas, Multilanguage, OthersWindows, Clientes, Automoveis, Servicos, Estoque,
@@ -148,12 +66,12 @@ class MeuOrc(Validadores, Functions, Formulas, Multilanguage, OthersWindows, Cli
         def containers():
             ###     Primeiro Container da janela
             top = Frame(self.janela, bd=2, bg= '#49708D', highlightbackground=self.borda_frame, highlightthickness=3)
-            top.place(relx=0.01, rely=0.005, relwidth=0.98, relheight=0.13)
+            top.place(relx=0.001, rely=0.001, relwidth=0.001, relheight=0.001)
             self.top = top
             ### Segundo Container da Janela
             top2 = Frame(self.janela, bd=1, bg=self.fundo_da_tela, highlightbackground=self.borda_frame,
                      highlightthickness=1)
-            top2.place(relx=0.01, rely=0.14, relwidth=0.98, relheight=0.2)
+            top2.place(relx=0.01, rely=0.04, relwidth=0.98, relheight=0.3)
             self.top2 = top2
         
             ### Terceiro Container da janela
@@ -605,7 +523,7 @@ class MeuOrc(Validadores, Functions, Formulas, Multilanguage, OthersWindows, Cli
         ### Widgets - Listar item 1 ###
 
         ####  Descricao do item Col2
-        self.listaCol2a = AutocompleteEntrySP(lista2, self.frame_aba2, bd=1, fg=self.fg_entry, bg=self.bg_entry,
+        self.listaCol2a = Entry(self.frame_aba2, bd=1, fg=self.fg_entry, bg=self.bg_entry,
                                               font=('Verdana', '8', 'bold'));
         self.listaCol2a.place(relx=0.016, rely=0.14, relwidth=0.53, relheight=0.08)
         ### Codigo do Item
